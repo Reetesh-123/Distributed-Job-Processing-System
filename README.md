@@ -1,5 +1,7 @@
 # Distributed Job Processing System
 
+**[Design document](DESIGN.md)** · [PDF](docs/pdf/Design-Document.pdf) · [Flows](docs/flows.md) · [Test results](docs/test-results.md)
+
 Computes the per-position mean of F files, each holding C random numbers, using a pool of Python workers. A worker handles at most 5 files at a time, workers can run at different speeds, and many jobs can run together.
 
 The idea: a task never returns averages. It returns the **sum of every position plus a count** of the files behind it. Sums can be added in any order, so partial results are combined as soon as they are ready, and the division happens once at the end.
@@ -150,7 +152,6 @@ docker-compose.yml
 
 ## Documents
 
-- [Design document](docs/01-design-document.md): requirements, API, data model, key decisions, limits and testing
-- [Design document (PDF)](docs/pdf/Design-Document.pdf)
+- [Design document](DESIGN.md): requirements, API, data model, key decisions, limits and testing
 - [Flows](docs/flows.md): step-by-step lists for create, combine, cancel, backup copies, dead workers and more
 - [Test results](docs/test-results.md)

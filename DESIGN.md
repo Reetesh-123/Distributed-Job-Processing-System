@@ -68,7 +68,7 @@ The key idea: a task never returns averages. It returns the **sum of each positi
 
 ## 6. High-level design
 
-![High-level design](images/hld-diagram.svg)
+![High-level design](docs/images/hld-diagram.svg)
 
 1. The user creates a job through the **API**.
 2. The API saves the job and its tasks in the **database**.
@@ -95,7 +95,7 @@ Steps 4 to 8 repeat until the job is done. The bonus **worker manager** (dashed)
 
 ## 7. Data model
 
-![Data model](images/er-diagram.svg)
+![Data model](docs/images/er-diagram.svg)
 
 **Types.** The diagram uses plain types. In PostgreSQL, ids are `uuid`, `string` is `text`, `json` is `jsonb`, `datetime` is `timestamptz` and `float` is `real`. The exact definitions are in `db/schema.sql`.
 

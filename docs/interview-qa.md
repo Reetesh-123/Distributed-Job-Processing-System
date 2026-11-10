@@ -1,4 +1,4 @@
-# Interview Q&A: Distributed Mean
+# Interview Q&A: Distributed Job Processing System
 
 Questions you may be asked about this assignment, with short answers. Lines starting with "Follow-up" are the questions an interviewer is likely to ask next. Numbers come from the design document and the tests.
 

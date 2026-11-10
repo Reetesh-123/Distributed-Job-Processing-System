@@ -1,4 +1,4 @@
-# Distributed Mean: Design Document
+# Distributed Job Processing System: Design Document
 
 **Author:** Reetesh Kumar · **Stack:** Node.js, Express, TypeScript, Python, PostgreSQL, RabbitMQ, Docker Compose
 

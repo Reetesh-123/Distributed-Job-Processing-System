@@ -1,4 +1,4 @@
-// Web UI for the Distributed Mean API. No build step, no libraries.
+// Web UI for the Distributed Job Processing System API. No build step, no libraries.
 // Pages are chosen by the URL hash. Each page has mount(root) to build its HTML once,
 // and refresh() to load fresh data every second.
 

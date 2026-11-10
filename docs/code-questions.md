@@ -1,4 +1,4 @@
-# Code Questions: Distributed Mean
+# Code Questions: Distributed Job Processing System
 
 Questions an interviewer may ask while looking at the code. Each answer points to the real file and function. Lines starting with "Follow-up" are the likely next questions.
 

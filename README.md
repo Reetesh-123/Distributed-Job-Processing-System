@@ -153,6 +153,4 @@ docker-compose.yml
 - [Design document](docs/01-design-document.md): requirements, API, data model, key decisions, limits and testing
 - [Design document (PDF)](docs/pdf/Design-Document.pdf)
 - [Flows](docs/flows.md): step-by-step lists for create, combine, cancel, backup copies, dead workers and more
-- [Interview Q&A](docs/interview-qa.md): likely questions and short answers
 - [Test results](docs/test-results.md)
-- [Implementation plan](docs/implementation-plan.md)

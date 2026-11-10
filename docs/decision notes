@@ -35,7 +35,7 @@ Each decision records the problem, the options considered, what was chosen, why,
 | Static: give each worker F/W files at the start | No coordination | Job is as slow as the slowest worker (~1.7× ideal in simulation); breaks the 5-file limit |
 | **Small tasks (≤ 5 inputs), workers pull one at a time** ✅ | Fast workers automatically do more; respects the limit | More tasks and messages |
 
-**Why.** The assignment says workers run at different speeds and should idle as little as possible. With pulling (`prefetch = 1`), a slow worker simply does fewer tasks. Messages are tiny, so the extra count is cheap.
+**Why.** The requirements say workers run at different speeds and should idle as little as possible. With pulling (`prefetch = 1`), a slow worker simply does fewer tasks. Messages are tiny, so the extra count is cheap.
 
 ---
 
@@ -88,7 +88,7 @@ Each decision records the problem, the options considered, what was chosen, why,
 | **RabbitMQ** ✅ | `prefetch = 1` gives one task per worker natively; automatic redelivery when a worker dies; built-in dashboard | One more service |
 | Redis Streams | Fast | Redelivery of a dead worker's tasks must be coded by hand |
 | AWS SQS | Fully managed | Needs AWS; can't run offline |
-| A table in PostgreSQL | No extra service | Polling; the assignment expects a separate queue |
+| A table in PostgreSQL | No extra service | Polling; a separate queue is the usual choice |
 
 **Why.** RabbitMQ gives fair one-at-a-time dispatch and crash recovery with no custom code, and runs locally in Docker.
 
@@ -147,7 +147,7 @@ Each decision records the problem, the options considered, what was chosen, why,
 | Shortest job first | Small jobs finish fastest | Large jobs can starve |
 | **Shallow queue (~2×W waiting tasks), refilled round-robin across jobs** ✅ | Every job progresses; small jobs finish quickly; cancel and resize act immediately | More scheduler bookkeeping |
 
-**Why.** The assignment requires accepting new jobs while others run. Round-robin is the simplest policy that's fair to all.
+**Why.** The requirements call for accepting new jobs while others run. Round-robin is the simplest policy that's fair to all.
 
 ---
 
@@ -201,7 +201,7 @@ Each decision records the problem, the options considered, what was chosen, why,
 | API enqueues all of a job's tasks | Matches the flow | Large jobs flood the queue (breaks D11) |
 | **API enqueues the first batch; scheduler releases the rest** ✅ | Matches the flow; work starts immediately; fairness kept | Two components publish to the queue |
 
-**Why.** Follows the assignment's flow while keeping the queue shallow and fair. If the API crashes after saving, unsent tasks stay `PENDING` and the scheduler sends them on its next tick.
+**Why.** Follows the intended flow while keeping the queue shallow and fair. If the API crashes after saving, unsent tasks stay `PENDING` and the scheduler sends them on its next tick.
 
 ---
 
@@ -228,7 +228,7 @@ Each decision records the problem, the options considered, what was chosen, why,
 
 ## D18. Enforcing the 5-file limit (simulated RAM constraint)
 
-**Problem.** The assignment says the limit exists "to simulate RAM constraints on each worker", so it must hold for every task, not just on average.
+**Problem.** The requirements say the limit exists "to simulate RAM constraints on each worker", so it must hold for every task, not just on average.
 
 | Option | Pros | Cons |
 |---|---|---|

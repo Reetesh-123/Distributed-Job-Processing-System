@@ -1,6 +1,6 @@
 # Interview Q&A: Distributed Job Processing System
 
-Questions you may be asked about this assignment, with short answers. Lines starting with "Follow-up" are the questions an interviewer is likely to ask next. Numbers come from the design document and the tests.
+Questions you may be asked about this project, with short answers. Lines starting with "Follow-up" are the questions an interviewer is likely to ask next. Numbers come from the design document and the tests.
 
 **Jump to:**
 - [30-second pitch](#30-second-pitch)
@@ -42,7 +42,7 @@ Questions you may be asked about this assignment, with short answers. Lines star
 **Q: Is this MapReduce?**
 - It is the same idea, hand-built. Generate tasks are the map step. Combine tasks are the reduce step.
 - Each partial result is a (position → sum, count) pair, like a key-value pair.
-- I didn't use Hadoop or Spark, because the assignment asks for the distribution logic itself.
+- I didn't use Hadoop or Spark, because the project is about the distribution logic itself.
 
 > **Follow-up: Where is the shuffle step?**
 > - There isn't one. Every task works on the same keys: the positions 0 to C-1.
@@ -347,7 +347,7 @@ Questions you may be asked about this assignment, with short answers. Lines star
 > - RabbitMQ gives both out of the box.
 
 **Q: Why Python for workers and TypeScript for the API?**
-- The assignment asks for a Node/Express/TypeScript API and Python workers.
+- The requirements ask for a Node/Express/TypeScript API and Python workers.
 - numpy makes the array maths short and fast.
 
 **Q: Why Docker Compose?**

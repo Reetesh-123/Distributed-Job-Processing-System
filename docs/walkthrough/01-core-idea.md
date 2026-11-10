@@ -103,7 +103,7 @@ def combine_items(data_dir, job_id, task_id, numbers_per_file, inputs, is_final)
 - **Not final:** save `total` (still sums, not divided) and return it with its count `total_count`. This is a new item that another combine task can pick up later.
 - **Final:** divide `total / total_count` exactly once, write the result as `.npy` and `.csv`, and report `count = total_count`. The scheduler then checks that the count equals F. If it doesn't, some file was missed or counted twice and the job fails instead of returning a wrong answer.
 
-## Walking through your assignment example
+## Walking through your worked example
 
 Files `[1,2,3]` and `[4,5,6]`, so F=2 and C=3. Both fit in one task, so it is the final one.
 
@@ -118,7 +118,7 @@ That is exactly the unit test:
 
 ```python
 # tests/test_computation.py
-def test_assignment_example(tmp_path):
+def test_worked_example(tmp_path):
     a = put(tmp_path, "a.npy", [1, 2, 3])
     b = put(tmp_path, "b.npy", [4, 5, 6])
     out = computation.combine_items(str(tmp_path), JOB, "t1", 3, [a, b], True)

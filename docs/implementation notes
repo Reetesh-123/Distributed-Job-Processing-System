@@ -466,7 +466,7 @@ Works on a narrow screen (tables scroll horizontally).
 
 ## 14. Testing and scripts
 
-- **`worker/tests/test_compute.py`** (pytest): assignment example; mixed raw + partial inputs; counts add correctly; shape mismatch raises; > 5 inputs raises.
+- **`worker/tests/test_compute.py`** (pytest): worked example; mixed raw + partial inputs; counts add correctly; shape mismatch raises; > 5 inputs raises.
 - **`tools/verify.py <jobId>`** (run with `docker compose exec workers python tools/verify.py <jobId>`): loads every raw file of the job, computes `np.mean(axis=0)` in float64, compares with `result.npy`; prints max absolute difference; exits non-zero if > 1e-9. It lives in the worker image because NumPy is installed there.
 - **`tools/demo.sh`**: `POST /jobs {F:50, C:10000}` → poll `GET /jobs/:id` until `COMPLETED` → `docker compose exec workers python tools/verify.py <jobId>` → print summary.
 - **Manual tests** to record for the submission: slow-worker demo, crash test (`docker compose exec workers pkill -9 -f worker.py` kills one worker; the manager restarts it), fairness test, scaling test.

@@ -205,7 +205,7 @@ The Python package `distributed_mean` is split the same way: `computation.py` (t
 
 - **Unit tests:** 11 tests for the maths, including the 5-input limit.
 - **Integration tests:** 35 checks against a real PostgreSQL. They cover every planner rule, result handling (normal run, duplicate result, wrong count, retry, cancelled job, unknown task), input validation, and the order tasks are published in.
-- **Correct answers:** the assignment example gives `[2.5, 3.5, 4.5]`. Jobs up to F = 4,000 give exactly the same result as numpy.
+- **Correct answers:** the worked example gives `[2.5, 3.5, 4.5]`. Jobs up to F = 4,000 give exactly the same result as numpy.
 - **Worker crash:** I killed a worker with `kill -9` in the middle of a job (F = 4,000, C = 300,000). The job still finished with the right result.
 - **Slow worker:** with one worker 30× slower, the system sent one backup copy and the result was still exact.
 - **Several jobs:** two jobs at once, a small job finishing next to a big one, and a cancel in the middle of a run.

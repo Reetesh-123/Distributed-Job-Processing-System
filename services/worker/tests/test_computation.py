@@ -12,7 +12,7 @@ def put(tmp_path, rel, values):
     return {"path": rel, "count": 1}
 
 
-def test_assignment_example(tmp_path):
+def test_worked_example(tmp_path):
     a = put(tmp_path, "a.npy", [1, 2, 3])
     b = put(tmp_path, "b.npy", [4, 5, 6])
     out = computation.combine_items(str(tmp_path), JOB, "t1", 3, [a, b], True)

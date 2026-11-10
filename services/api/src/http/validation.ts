@@ -1,4 +1,4 @@
-/** Request validation helpers. Limits come from the assignment: 1 < F < 100000 and 1 < C < 1000000. */
+/** Request validation helpers. Limits: 1 < F < 100000 and 1 < C < 1000000. */
 
 export const MAX_FILES = 100_000;
 export const MAX_NUMBERS_PER_FILE = 1_000_000;

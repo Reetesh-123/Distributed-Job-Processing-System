@@ -4,11 +4,11 @@ Recorded while building (2026-10-10), against the Docker Compose stack: 3 worker
 
 Correctness in every end-to-end test below means `python tools/verify.py` reported a maximum difference against `numpy.mean` of 0 (limit 1e-9).
 
-## Checklist (requirement.md section 9)
+## Checklist
 
 | # | Test | Result |
 |---|---|---|
-| 9.1 | Assignment example `[1,2,3]` + `[4,5,6]` | `[2.5, 3.5, 4.5]` exactly (`test_assignment_example`) |
+| 9.1 | Worked example `[1,2,3]` + `[4,5,6]` | `[2.5, 3.5, 4.5]` exactly (`test_worked_example`) |
 | 9.2 | Random jobs match `numpy.mean` | Unit tests for F = 2, 5, 6, 12, 37 within 1e-9; end-to-end F = 2, 6, 37, 1000, 4000 all difference 0 |
 | 9.3 | Final count = F | Enforced by the scheduler; a wrong count fails the job (tested: "count mismatch") |
 | 9.4 | Slow-worker demo | Slowdown `1,1,3`: workers did 553, 556 and 248 tasks. Slowdown `1,1,20`, F=40, C=999,999: 4.6–6.8 s without backups, 3.6–4.2 s with backups |

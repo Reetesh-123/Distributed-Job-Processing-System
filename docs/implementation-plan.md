@@ -1,6 +1,6 @@
 # Implementation Plan
 
-The build order, specs and acceptance criteria are in `implementation notes` (section 13, M1–M8). This file only adds what the notes don't cover: the environment check and a pointer to the relevant sections per milestone. Work one milestone at a time and tick `requirement.md` as you go.
+The build order, specs and acceptance criteria are in `implementation notes` (section 13, M1–M8). This file only adds what the notes don't cover: the environment check and a pointer to the relevant sections per milestone. Work one milestone at a time.
 
 ## Status: M1–M8 complete (2026-10-10)
 

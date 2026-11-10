@@ -566,7 +566,7 @@ await pool.query("UPDATE tasks SET backup_sent = true WHERE id = $1", [task.id])
 
 <article class="file" id="f-tests"><header><span class="path">services/worker/tests/test_computation.py · services/api/tests/integration/*.js</span><span class="lang">Tests</span></header>
 <div class="grid">
-<div class="box what"><b>What</b><p>Python unit tests for the maths (the assignment example, uneven groups, mixed partial and raw inputs, size limits). Integration tests run the planner rules and <code>applyWorkerResult</code> against a real database inside rolled-back transactions.</p></div>
+<div class="box what"><b>What</b><p>Python unit tests for the maths (the worked example, uneven groups, mixed partial and raw inputs, size limits). Integration tests run the planner rules and <code>applyWorkerResult</code> against a real database inside rolled-back transactions.</p></div>
 <div class="box why"><b>Why</b><p>The two risky parts are the arithmetic and the scheduling decisions. The unit tests need no services at all. The integration tests check the planner and result handler on real SQL, including duplicates, retries and a wrong final count.</p></div>
 </div></article>
 

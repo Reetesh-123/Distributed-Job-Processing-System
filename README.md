@@ -1,4 +1,4 @@
-#Distributed Job Processing System.
+# Distributed Job Processing System.
 
 Computes the per-position mean of F files, each holding C random numbers, using a pool of Python workers. A worker handles at most 5 files at a time, workers can run at different speeds, and many jobs can run together.
 
